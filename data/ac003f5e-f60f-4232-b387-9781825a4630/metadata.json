@@ -1,0 +1,26 @@
+{
+  "0": {
+    "text": "resume_detail {\n  \"domain_experience\": {\n    \"Other\": {\n      \"AWS\": 2.1666666666666665,\n      \"Docker\": 2.1666666666666665,\n      \"GCP\": 2.1666666666666665,\n      \"Node.js\": 2.1666666666666665,\n      \"PostgreSQL\": 2.1666666666666665,\n      \"React.js\": 0.4166666666666667\n    }\n  },\n  \"extra_skills\": [\n    \"spacy\",\n    \"openai api\"\n  ],\n  \"skills\": [\n    \"Transformers\",\n    \"CI/CD\",\n    \"PyTorch\",\n    \"LLM\",\n    \"LangChain\",\n    \"Docker\",\n    \"MySQL\",\n    \"PostgreSQL\",\n    \"GCP\",\n    \"MongoDB\",",
+    "source": "data/ac003f5e-f60f-4232-b387-9781825a4630/claude_response.txt"
+  },
+  "1": {
+    "text": "\"LLM\",\n    \"LangChain\",\n    \"Docker\",\n    \"MySQL\",\n    \"PostgreSQL\",\n    \"GCP\",\n    \"MongoDB\",\n    \"FastAPI\",\n    \"RAG\",\n    \"SQL\",\n    \"Python\",\n    \"Node.js\",\n    \"Prompt Engineering\",\n    \"React.js\",\n    \"Vector DB\",\n    \"JavaScript\",\n    \"Embeddings\",\n    \"AWS\"\n  ],\n  \"total_experience\": 2.58\n}",
+    "source": "data/ac003f5e-f60f-4232-b387-9781825a4630/claude_response.txt"
+  },
+  "2": {
+    "text": "jd_detail {\n  \"extra_skills\": [],\n  \"skills\": [\n    \"LangChain\",\n    \"NoSQL\",\n    \"LlamaIndex\",\n    \"LangGraph\",\n    \"Langfuse\",\n    \"LLM Evaluation\",\n    \"SQL\",\n    \"Python\",\n    \"CI/CD\",\n    \"Azure\",\n    \"Semantic Search\",\n    \"A/B Testing\",\n    \"AutoGen\",\n    \"Prompt Engineering\",\n    \"RAG Evaluation\"\n  ],\n  \"total_experience\": {\n    \"max_years\": null,\n    \"min_years\": 3\n  }\n}",
+    "source": "data/ac003f5e-f60f-4232-b387-9781825a4630/claude_response.txt"
+  },
+  "3": {
+    "text": "resume_detail [\n  \"LLM\",\n  \"Node.js\",\n  \"GCP\",\n  \"Prompt Engineering\",\n  \"React.js\",\n  \"SQL\",\n  \"AWS\",\n  \"FastAPI\",\n  \"Embeddings\",\n  \"LangChain\",\n  \"Python\",\n  \"Transformers\",\n  \"PyTorch\",\n  \"MySQL\",\n  \"PostgreSQL\",\n  \"JavaScript\",\n  \"RAG\",\n  \"Docker\",\n  \"CI/CD\",\n  \"Next.js\",\n  \"MongoDB\",\n  \"Vector DB\"\n]\njd_detail [\n  \"Langfuse\",\n  \"Python\",\n  \"Semantic Search\",\n  \"SQL\",\n  \"NoSQL\",\n  \"Azure\",\n  \"AWS\",\n  \"LangGraph\",\n  \"RAG Evaluation\",\n  \"LlamaIndex\",\n  \"AutoGen\",\n  \"LangChain\"\n]",
+    "source": "data/ac003f5e-f60f-4232-b387-9781825a4630/claude_response.txt"
+  },
+  "4": {
+    "text": "\"Azure\",\n  \"AWS\",\n  \"LangGraph\",\n  \"RAG Evaluation\",\n  \"LlamaIndex\",\n  \"AutoGen\",\n  \"LangChain\"\n]\nmatched skills are: {'langchain', 'python', 'aws', 'sql'}\nmissing skills are:  {'autogen', 'rag evaluation', 'nosql', 'langgraph', 'azure', 'llamaindex', 'langfuse', 'semantic search'}",
+    "source": "data/ac003f5e-f60f-4232-b387-9781825a4630/claude_response.txt"
+  },
+  "5": {
+    "text": "extra skills are: {'postgresql', 'transformers', 'fastapi', 'vector db', 'rag', 'mysql', 'prompt engineering', 'next.js', 'embeddings', 'react.js', 'javascript', 'gcp', 'pytorch', 'docker', 'ci/cd', 'node.js', 'mongodb', 'llm'}",
+    "source": "data/ac003f5e-f60f-4232-b387-9781825a4630/claude_response.txt"
+  }
+}
