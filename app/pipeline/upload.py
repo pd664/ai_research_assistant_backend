@@ -35,14 +35,14 @@ async def upload_doc(file, embedder, vector_store, session_id):
         all_chunks = []
         metadata = []
         for page in pages:
-            text = clean_text(page.page_content)
+            text = clean_text(page["page_content"])
             chunks = chunkker(text)
             if chunks:
                 for chunk in chunks:
                     all_chunks.append(chunk)
                     metadata.append({
                         "text": chunk,
-                        **page.metadata
+                        **page["metadata"]
                     })
         existing_texts = {m["text"] for m in vector_store.metadata.values()}
         unique_chunks = []

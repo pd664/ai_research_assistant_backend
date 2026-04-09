@@ -1,16 +1,3 @@
-# def check_grounding(answer, chunks):
-#     context = " ".join([c["text"] for c in chunks]).lower()
-#     answer = answer.lower()
-
-#     # check if key parts of answer exist in context
-#     words = answer.split()
-
-#     match_count = sum(1 for w in words if w in context)
-
-#     score = match_count / (len(words) + 1e-5)
-
-#     return score > 0.5
-
 def check_grounding(answer: str, chunks: list) -> bool:
     if not chunks or not answer:
         return True
@@ -49,20 +36,3 @@ def check_grounding(answer: str, chunks: list) -> bool:
 
     # 0.4 threshold — allows for paraphrasing and synthesis
     return ratio > 0.4
-
-# def check_grounding(answer, chunks):
-#     context = " ".join([c["text"] for c in chunks]).lower()
-#     answer = answer.lower()
-
-#     # Extract important tokens (long words, emails, numbers)
-#     tokens = [
-#         w for w in answer.split()
-#         if len(w) > 4 or "@" in w or w.isdigit()
-#     ]
-
-#     if not tokens:
-#         return True  # nothing meaningful to check
-
-#     matches = sum(1 for t in tokens if t in context)
-
-#     return matches / len(tokens) > 0.6

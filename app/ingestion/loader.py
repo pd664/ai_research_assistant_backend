@@ -1,5 +1,6 @@
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_core.documents import Document
+import fitz
 
 async def load_doc(file_path: str):
     pages = []
@@ -12,19 +13,29 @@ async def load_doc(file_path: str):
 
     return pages
 
-
 def load_pdf(file_path):
     if not file_path:
         raise ValueError("Please select a file first")
 
     try:
-        loader = PyPDFLoader(file_path)
-        docs = loader.load()
-        return docs
+        doc = fitz.open(file_path)
+        pages = []
+
+        for page_num, page in enumerate(doc):
+            text = page.get_text()
+
+            pages.append({
+                "page_content": text,
+                "metadata": {
+                    "page": page_num,
+                    "source": file_path
+                }
+            })
+
+        return pages
 
     except Exception as e:
         raise RuntimeError(f"There is some error: {e}")
-    
 
 def load_txt(file_path):
     if not file_path:
@@ -33,7 +44,11 @@ def load_txt(file_path):
     try:
         with open(file_path, "r", encoding="utf-8") as f:
             content = f.read()
-            return [Document(page_content=content, metadata={"source": file_path})]
+            return [{
+            "page_content": content,
+            "metadata": {"source": file_path}
+        }]
+
 
     except Exception as e:
         raise RuntimeError(f"There is some error: {e}")
