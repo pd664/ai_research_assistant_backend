@@ -1,5 +1,3 @@
-from langchain_community.document_loaders import PyPDFLoader
-from langchain_core.documents import Document
 import fitz
 
 async def load_doc(file_path: str):
