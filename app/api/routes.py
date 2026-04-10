@@ -22,17 +22,20 @@ async def upload_file(request: Request,file: UploadFile=File(...)):
     print("index_path is ", index_path, metadata_path)
     
     vector_store = VectorStore(
-        dim=384,
+        dim=1024,
         index_path=index_path,
         metadata_path=metadata_path
     )
+    print(2)
     embedder = request.app.state.embedder
+    print(3)
     try:
         start = time.time()
+        print(4)
         response = await upload_doc(file, embedder, vector_store, session_id)
-        log_run("Uploading File", "", start)
+        print("Uploading File", "", start)
         return response
-    except Exception as e:
+    except Exception as e:  
         print(f"Error occurred while uploading file: {e}")
         return {"error": str(e)}    
 
@@ -43,9 +46,9 @@ async def ask_question(request: Request, body: AskRequest):
     if not session_id:
         raise HTTPException(status_code=400, detail="Missing session ID")
     index_path, metadata_path = get_session_paths(session_id)
-
+    print("index_path is ", index_path, metadata_path)
     vector_store = VectorStore(
-        dim=384,
+        dim=1024,
         index_path=index_path,
         metadata_path=metadata_path
     )

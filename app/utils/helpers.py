@@ -8,12 +8,18 @@ def get_retrieval_confidence(results):
 
     return top_score
 
-def should_use_vector(results, threshold=0.5):
-
+def should_use_vector(results):
     if not results:
         return False
-    top_score = get_retrieval_confidence(results)
+    top_score = max(r.get("score", 0) for r in results)
+    print(f"Top score: {top_score}")
+    return top_score > 0.35
+# def should_use_vector(results, threshold=0.5):
 
-    print(f"Top score: {top_score:.2f}")
+#     if not results:
+#         return False
+#     top_score = get_retrieval_confidence(results)
 
-    return top_score >= threshold
+#     print(f"Top score: {top_score:.2f}")
+
+#     return top_score >= threshold

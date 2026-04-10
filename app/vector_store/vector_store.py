@@ -106,24 +106,35 @@ class VectorStore:
     # ---------------- SAVE ----------------
     def save(self):
         try:
+            print(21)
             os.makedirs(os.path.dirname(self.npy_path), exist_ok=True)
+            print(22)
             os.makedirs(os.path.dirname(self.metadata_path), exist_ok=True)
+            print(23)
 
             if self.index.ntotal == 0:
                 # Save empty state safely
+                print(24)
                 np.save(self.npy_path, np.empty((0, self.dim), dtype="float32"))
+                print(25)
             else:
+                print(26)
                 embeddings = faiss.rev_swig_ptr(
                     self.index.get_xb(),
                     self.index.ntotal * self.dim
                 )
+                print(27)
                 embeddings = np.array(embeddings, dtype="float32").reshape(
                     self.index.ntotal, self.dim
                 )
+                print(28)
                 np.save(self.npy_path, embeddings)
+                print(29)
 
             with open(self.metadata_path, "w") as f:
                 json.dump(self.metadata, f, indent=2)
+                print(30)
+            print(31)
 
         except Exception as e:
             raise RuntimeError(f"Failed to save vector store: {str(e)}")
